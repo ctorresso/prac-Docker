@@ -7,8 +7,7 @@ job('Practica Docker') {
         }
     }
     triggers {
-	    cron('H/60 * * * *')
-	    githubPush()
+	    scm('H/7 * * * *')
     }    
     wrappers {
             nodejs('nodejs')
