@@ -14,7 +14,7 @@ job('Practica Docker') {
     }
     steps {
 	dockerBuildAndPublish {
-	    repositoryName('ctorresso/nodejsapp')
+	    repositoryName('pdesar/nodejsapp')
 	    tag('${GIT_REVISION,length=7}')
 	    registryCredentials('docker-hub')
 	    forcePull(false)
