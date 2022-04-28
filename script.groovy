@@ -11,17 +11,18 @@ job('Practica Docker') {
 	    githubPush()
     }    
     steps {
-        maven {
-          mavenInstallation('mavenjenkins')
-          goals('-B -DskipTests clean package')
-        }
-        maven {
-          mavenInstallation('mavenjenkins')
-          goals('test')
-        }
-        shell(
-          echo "Hola mundo" 
-          )  
+	dockerBuildAndPublish {
+	    repositoryName('ctorresso/nodejsapp')
+	    tag('${GIT_REVISION,length=7}')
+	    registryCredentials('docker-hub')
+	    forcePull(false)
+	    createFingerprints(false)
+	    skipDecorate()
+	}
+    	shell(' echo "Hola Mundo "')
+		
+        
+		
     }
     publishers {
         archiveArtifacts('target/*.jar')
