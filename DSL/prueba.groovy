@@ -1,7 +1,7 @@
 job('Prueba Practica') {
     description('Upload Docker')
     scm {
-        git('https://github.com/ctorresso/prac-Docker.git', 'main') { node ->
+        git('https://github.com/ctorresso/prac-Docker.git', 'master') { node ->
             node / gitConfigName('ctorresso')
             node / gitConfigEmail('a210216376@unison.mx')
         }
