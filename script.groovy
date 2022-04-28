@@ -23,9 +23,7 @@ job('Practica Docker') {
 	}	
     }
     publishers {
-        archiveArtifacts('target/*.jar')
-        archiveJunit('target/surefire-reports/*.xml')
-	      slackNotifier {
+	 slackNotifier {
             notifyAborted(true)
             notifyEveryFailure(true)
             notifyNotBuilt(false)
