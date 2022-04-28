@@ -10,6 +10,9 @@ job('Practica Docker') {
 	    cron('H/60 * * * *')
 	    githubPush()
     }    
+    wrappers {
+            nodejs('nodejs')
+    }
     steps {
 	dockerBuildAndPublish {
 	    repositoryName('ctorresso/nodejsapp')
@@ -18,11 +21,7 @@ job('Practica Docker') {
 	    forcePull(false)
 	    createFingerprints(false)
 	    skipDecorate()
-	}
-    	shell(' echo "Hola Mundo "')
-		
-        
-		
+	}	
     }
     publishers {
         archiveArtifacts('target/*.jar')
