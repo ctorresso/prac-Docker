@@ -14,7 +14,7 @@ job('Aplicacion Upload Jenkins') {
     }
     steps {
         dockerBuildAndPublish {
-            repositoryName('ctorresso/nodejsapp')
+            repositoryName('luislink24/nodejsapp2')
             tag('${GIT_REVISION,length=7}')
             registryCredentials('docker-hub')
             forcePull(false)
