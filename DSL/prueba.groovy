@@ -1,4 +1,4 @@
-job('Practica Docker') {
+job('Upload Docker') {
     description('Practica personal de Nodejs-Docker')
     scm {
         git('https://github.com/ctorresso/prac-Docker.git', 'main') { node ->
