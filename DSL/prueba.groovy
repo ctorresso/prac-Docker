@@ -1,5 +1,5 @@
-job('Upload Docker') {
-    description('Practica personal de Nodejs-Docker')
+job('Prueba Practica') {
+    description('Upload Docker')
     scm {
         git('https://github.com/ctorresso/prac-Docker.git', 'main') { node ->
             node / gitConfigName('ctorresso')
@@ -23,7 +23,7 @@ job('Upload Docker') {
         }
     }
     publishers {
-        slackNotifier {
+	slackNotifier {
             notifyAborted(true)
             notifyEveryFailure(true)
             notifyNotBuilt(false)
